@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+</head>
+<body>
+
+<h2>Fill Details</h2>
+
+<form id="form">
+<input name="name" placeholder="Name" required><br><br>
+<input name="mobile" placeholder="Mobile" required><br><br>
+<input type="date" name="date" required><br><br>
+<input name="message" placeholder="Service" required><br><br>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e){
+e.preventDefault();
+
+const data={
+name:this.name.value,
+mobile:this.mobile.value,
+date:this.date.value,
+service:this.message.value
+};
+
+let customers=JSON.parse(localStorage.getItem("customers"))||[];
+customers.push(data);
+localStorage.setItem("customers",JSON.stringify(customers));
+
+alert("Saved ✅");
+this.reset();
+});
+</script>
+
+</body>
+</html>

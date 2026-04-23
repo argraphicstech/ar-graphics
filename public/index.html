@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Graphics Tech</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+  background: linear-gradient(-45deg,#1a0f3c,#3a1c71,#ff4e50,#1a2a6c);
+  background-size:400% 400%;
+  animation:bg 10s ease infinite;
+  color:white;
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo-text{
+  color:#00e5ff;
+  font-size:22px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#00e5ff;
+}
+
+/* HEADER */
+header{text-align:center;padding:20px;}
+.logo img{width:220px;filter: drop-shadow(0 0 12px #00e5ff);}
+.tagline{font-size:18px;color:#ddd;margin-top:10px;}
+
+.title{text-align:center;font-size:28px;margin:25px;color:#00e5ff;}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+  padding:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  overflow:hidden;
+  backdrop-filter:blur(20px);
+  transition:0.4s;
+}
+
+.card:hover{transform:translateY(-10px) scale(1.03);}
+.card img{width:100%;height:150px;object-fit:cover;}
+.card-content{padding:15px;text-align:center;}
+
+/* FORM */
+.contact{
+  padding:30px;
+  text-align:center;
+  background:rgba(255,255,255,0.08);
+  margin:20px;
+  border-radius:20px;
+}
+
+.contact input{
+  width:90%;
+  max-width:300px;
+  padding:12px;
+  margin:10px;
+  border:none;
+  border-radius:10px;
+}
+
+.contact button{
+  padding:12px 25px;
+  background:linear-gradient(45deg,#00e5ff,#ff00cc);
+  border:none;
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+}
+
+/* MAP */
+.map{
+  margin:20px;
+  padding:20px;
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  padding:20px;
+  text-align:center;
+  background:rgba(255,255,255,0.08);
+  margin:20px;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2 class="logo-text">AR Graphics</h2>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#form">Book</a></li>
+    <li><a href="#map">Location</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header id="home">
+  <div class="logo">
+    <img src="/images/logo.jpg" alt="Logo">
+  </div>
+  <div class="tagline">All Printing & Digital Services in One Place</div>
+</header>
+
+<h2 class="title">Our Services</h2>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+<div class="card"><img src="/images/printout.jpg"><div class="card-content"><h2>Print Out</h2><p>₹3 per page</p></div></div>
+<div class="card"><img src="/images/colouredprint.jpg"><div class="card-content"><h2>Coloured Print</h2><p>₹10 per page</p></div></div>
+<div class="card"><img src="/images/online_forms.jpg"><div class="card-content"><h2>Online Forms</h2><p>₹100 per form</p></div></div>
+<div class="card"><img src="/images/visiting_cards.jpg"><div class="card-content"><h2>Visiting Cards</h2><p>₹500</p></div></div>
+
+</section>
+
+<!-- FORM -->
+<section class="contact" id="form">
+<h2>Fill Details</h2>
+
+<form id="form">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}">
+<input type="date" name="date" required>
+<input type="text" name="message" placeholder="Service" required>
+<br>
+<button type="submit">Submit</button>
+</form>
+
+</section>
+
+<!-- MAP -->
+<<section class="map" id="map">
+<h2>📍 Our Location</h2>
+<iframe src="https://www.google.com/maps?q=28.6911,76.9290&z=15&output=embed"
+width="100%" height="300" style="border:0;border-radius:15px;"></iframe>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+<p>📞 Mobile: 8053440252</p>
+<p>📧 Email: argraphicstech@gmail.com</p>
+</footer>
+
+<!-- JS -->
+<script>
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    name: this.name.value,
+    mobile: this.mobile.value,
+    date: this.date.value,
+    service: this.message.value
+  };
+
+  let customers = JSON.parse(localStorage.getItem("customers")) || [];
+  customers.push(data);
+  localStorage.setItem("customers", JSON.stringify(customers));
+
+  alert("Saved successfully ✅");
+  this.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customers</title>
+</head>
+<body>
+
+<h2>Customer Data</h2>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>Date</th>
+<th>Service</th>
+</tr>
+
+<tbody id="data"></tbody>
+</table>
+
+<script>
+function load(){
+let customers=JSON.parse(localStorage.getItem("customers"))||[];
+
+let html="";
+customers.forEach(c=>{
+html+=`<tr><td>${c.name}</td><td>${c.mobile}</td><td>${c.date}</td><td>${c.service}</td></tr>`;
+});
+
+document.getElementById("data").innerHTML=html;
+}
+load();
+</script>
+
+</body>
+</html>
