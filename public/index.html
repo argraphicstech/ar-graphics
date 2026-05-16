@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=1200">
 <title>AR Graphics Tech</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -11,6 +11,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
+  min-width:1200px;
   background: linear-gradient(-45deg,#1a0f3c,#3a1c71,#ff4e50,#1a2a6c);
   background-size:400% 400%;
   animation:bg 10s ease infinite;
@@ -32,6 +33,7 @@ html {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  min-width:1200px;
   padding:15px 30px;
   background:rgba(0,0,0,0.4);
   backdrop-filter:blur(10px);
@@ -72,7 +74,7 @@ header{text-align:center;padding:20px;}
 /* SERVICES */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:25px;
   padding:25px;
 }
