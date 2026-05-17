@@ -155,7 +155,6 @@ footer{
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#form">Book</a></li>
     <li><a href="#map">Location</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -191,21 +190,6 @@ footer{
 
 </section>
 
-<!-- FORM -->
-<section class="contact" id="form">
-<h2>Fill Details</h2>
-
-<form id="form">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="tel" name="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}">
-<input type="date" name="date" required>
-<input type="text" name="message" placeholder="Service" required>
-<br>
-<button type="submit">Submit</button>
-</form>
-
-</section>
-
 <!-- MAP -->
 <<section class="map" id="map">
 <h2>📍 Our Location</h2>
@@ -218,27 +202,6 @@ width="100%" height="300" style="border:0;border-radius:15px;"></iframe>
 <p>📞 Mobile: 8053440252</p>
 <p>📧 Email: argraphicstech@gmail.com</p>
 </footer>
-
-<!-- JS -->
-<script>
-document.getElementById("form").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const data = {
-    name: this.name.value,
-    mobile: this.mobile.value,
-    date: this.date.value,
-    service: this.message.value
-  };
-
-  let customers = JSON.parse(localStorage.getItem("customers")) || [];
-  customers.push(data);
-  localStorage.setItem("customers", JSON.stringify(customers));
-
-  alert("Saved successfully ✅");
-  this.reset();
-});
-</script>
 
 </body>
 </html>
