@@ -1,1 +1,0 @@
-let customers=[]; export const addCustomer=(d)=>customers.push(d); export const getCustomers=()=>customers;
